@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/TicTacToe.png" type="image/x-icon">
-    <link rel="stylesheet" href="img/icon-font.css">
-    <link rel="stylesheet" href="img/sprite.css">
     <link rel="stylesheet" href="icon-fonts.css">
     <link rel="stylesheet" href="style.css">
     <script src="vue.js"></script>
@@ -25,9 +23,6 @@
                         <div class="player">
                             Player
                         </div>
-                        <!-- <svg class="icon player-i-circle">
-                            <use xlink:href="img/sprite.svg#icon-radio-unchecked"></use>
-                        </svg> -->
                         <i class="icon-small icon-radio-unchecked"></i>
                     </div>
                     <button class="btn btn-start" v-if="!gamePlaying" @click="startGame">
@@ -44,9 +39,6 @@
                         <div class="player">
                             Player
                         </div>
-                        <!-- <svg class="icon player-i-cross">
-                            <use xlink:href="img/sprite.svg#icon-cross"></use>
-                        </svg> -->
                         <i class="icon-small icon-cross"></i>
                     </div>
                 </div>
