@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/TicTacToe.png" type="image/x-icon">
+    <link rel="stylesheet" href="img/icon-font.css">
+    <link rel="stylesheet" href="img/sprite.css">
+    <link rel="stylesheet" href="icon-fonts.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="vue.js"></script>
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="title">
+                Tic Tac Toe
+            </div>
+            <div class="board-container">
+                <div class="board-cover" v-if="!gamePlaying"></div>
+                <div class="winner" v-if="showWinner">{{ state.winner }}</div>
+                <div class="controls">
+                    <div class="player-container" :class="checkActiveO()">
+                        <div class="player">
+                            Player
+                        </div>
+                        <!-- <svg class="icon player-i-circle">
+                            <use xlink:href="img/sprite.svg#icon-radio-unchecked"></use>
+                        </svg> -->
+                        <i class="icon-small icon-radio-unchecked"></i>
+                    </div>
+                    <button class="btn btn-start" v-if="!gamePlaying" @click="startGame">
+                        Start Game
+                    </button>
+                    <button class="btn btn-new" v-if="gamePlaying" @click="newGame">
+                        New Game
+                    </button>
+                    <button class="btn btn-end" v-if="gamePlaying" @click="gamePlaying = !gamePlaying">
+                        End Game
+                    </button>
+                    
+                    <div class="player-container" :class="checkActiveX()">
+                        <div class="player">
+                            Player
+                        </div>
+                        <!-- <svg class="icon player-i-cross">
+                            <use xlink:href="img/sprite.svg#icon-cross"></use>
+                        </svg> -->
+                        <i class="icon-small icon-cross"></i>
+                    </div>
+                </div>
+                <ul class="box-container" @click="move">
+                    <li class="box box0"><div v-if="state.box0" v-html="state.box0"></div></li>
+                    <li class="box box1"></i><div v-if="state.box1" v-html="state.box1"></div></li>
+                    <li class="box box2"><div v-if="state.box2" v-html="state.box2"></div></li>
+                    <li class="box box3"><div v-if="state.box3" v-html="state.box3"></div></li>
+                    <li class="box box4"><div v-if="state.box4" v-html="state.box4"></div></li>
+                    <li class="box box5"><div v-if="state.box5" v-html="state.box5"></div></li>
+                    <li class="box box6"><div v-if="state.box6" v-html="state.box6"></div></li>
+                    <li class="box box7"><div v-if="state.box7" v-html="state.box7"></div></li>
+                    <li class="box box8"><div v-if="state.box8" v-html="state.box8"></div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
