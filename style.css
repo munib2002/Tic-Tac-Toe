@@ -95,7 +95,7 @@ body {
     display: flex;
     align-items: center;
     padding: .7rem;
-    /* border: .2rem solid transparent; */
+    border: .2rem solid transparent;
 }
 
 .player--active {
