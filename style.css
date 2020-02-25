@@ -134,6 +134,31 @@ body {
     background-color: #c0392b;
 }
 
+.btn-reset-wins {
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 0;
+    cursor: pointer;
+    outline: none;
+    border-right: .2rem solid #c0392b;
+    transition: all .2s;
+    background-color: transparent;
+    box-shadow: 0 1rem 1rem rgba(0,0,0,.01);
+    transform: rotate(90deg);
+    align-self: center;
+
+    grid-row: 2 / span 1;
+    grid-column: 1  /span 2;
+}
+
+.btn-reset-wins:hover {
+    background-color: #e74c3c;
+}
+
+.btn-reset-wins:active {
+    background-color: #c0392b;
+}
+
 .box-container {
     height: 90%;
     list-style: none;
@@ -180,7 +205,7 @@ body {
     width: 20rem;
     background-color: #fff;
     border: .5rem solid #2980b9;
-    box-shadow: 0 1rem 2rem rgba(0,0,0,.3);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.12);
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -210,4 +235,14 @@ body {
 .player-wins-O-count,
 .player-wins-X-count {
     color: #2ecc71;
+    grid-row: 2 / span 1;
 }
+
+.player-wins-O-count {
+    grid-column: 1 / span 1;
+}
+
+.player-wins-X-count {
+    grid-column: 2 / span 1;
+}
+

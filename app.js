@@ -71,6 +71,9 @@ new Vue({
                 this.showWinner = true;
                 this.gamePlaying = false;
             }
+        },
+        resetWins() {
+            this.wins = {O:0,X:0};
         }
     }
 }); 
