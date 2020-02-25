@@ -5,6 +5,7 @@ new Vue({
         activePlayerO: true,
         showWinner: false,
         state: {},
+        wins: {O: 0, X: 0}
     },
     methods: {
         checkActiveO() {
@@ -20,15 +21,18 @@ new Vue({
                 const icon = `
                     <i class="icon-big icon-${turn}"></i>
                 `;
-                const el = event.target.closest('.box').className.split(' ')[1];
-                if (!this.state[el]) {
-                    this.state[el] = icon;
-                    this.addMove(activePlayer, el.split('')[3]);
-                    this.checkWin(activePlayer);
-                    this.checkDraw();
-                    this.activePlayerO = !this.activePlayerO;
+                const elTest = event.target.closest('.box');
+                if (elTest) {
+                    const el = elTest.className.split(' ')[1];
+                    if (!this.state[el]) {
+                        this.state[el] = icon;
+                        this.addMove(activePlayer, el.split('')[3]);
+                        this.checkWin(activePlayer);
+                        this.checkDraw();
+                        this.activePlayerO = !this.activePlayerO;
+                    }
                 }
-                console.log(this.state)
+                // console.log(this.state);
             }
         },
         newGame() {
@@ -57,6 +61,7 @@ new Vue({
                     this.state.winner = `player ${activePlayer} wins!!!`
                     this.showWinner = true;
                     this.gamePlaying = false;
+                    this.wins[activePlayer]++;
                 }
             });
         },

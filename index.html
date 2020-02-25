@@ -11,8 +11,8 @@
 </head>
 <body>
     <div id="app">
-        <div class="container">
-            <div class="title">
+        <div class="container-main">
+            <div class="heading">
                 Tic Tac Toe
             </div>
             <div class="board-container">
@@ -53,6 +53,15 @@
                     <li class="box box7"><div v-if="state.box7" v-html="state.box7"></div></li>
                     <li class="box box8"><div v-if="state.box8" v-html="state.box8"></div></li>
                 </ul>
+            </div>
+            <div class="win-container-main">
+                <div class="win-heading">wins</div>
+                <div class="win-container-sub">
+                    <div class="player-wins-O">Player O</div>
+                    <div class="player-wins-O-count">{{ wins.O }}</div>
+                    <div class="player-wins-X">Player X</div>
+                    <div class="player-wins-X-count">{{ wins.X }}</div>
+                </div>
             </div>
         </div>
     </div>

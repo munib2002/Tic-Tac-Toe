@@ -18,25 +18,26 @@ body {
     background-image: linear-gradient(to bottom right, #c69963, #B28451);
     background-repeat: no-repeat;
     font-family: sans-serif;
-    min-height: 100vh;
-    overflow: hidden;
 }
 
-.container {
-    /* padding: 4rem; */
-    display: flex;
+.container-main {
     height: 100vh;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(8, 1fr);
 }
 
-.title {
+.heading {
     text-transform: uppercase;
     font-size: 5rem;
-    margin-bottom: 11vh;
+    /* margin-bottom: 11vh; */
     color: #0A0a0e;
     border-bottom: .2rem solid;
+    margin-top: auto;
+
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+    justify-self: center;
 }
 
 .board-container {
@@ -45,6 +46,11 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
+
+    grid-column: 2 / span 1;
+    grid-row: 2 / -1;
+    align-self: center;
+    justify-self: center;
 }
 
 .board-cover {
@@ -89,7 +95,7 @@ body {
     display: flex;
     align-items: center;
     padding: .7rem;
-    border: .2rem solid transparent;
+    /* border: .2rem solid transparent; */
 }
 
 .player--active {
@@ -156,4 +162,51 @@ body {
 
 .icon-big {
     font-size: 11vh;
+}
+
+.win-container-main {
+    margin-top: 1rem;
+    grid-column: 3 / span 1;
+    grid-row: 3 / span 1;
+    margin-right: 7rem;
+    align-self: flex-start;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.win-container-sub {
+    width: 20rem;
+    background-color: #fff;
+    border: .5rem solid #2980b9;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, min-content);
+    justify-items: center;
+}
+
+.win-heading {
+    text-transform: uppercase;
+    font-size: 2rem;
+    grid-row: 2 / span 1;
+    grid-column: 3 / span 1;
+}
+
+.player-wins-O {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    border-bottom: .2rem solid;
+}
+
+.player-wins-X {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    border-bottom: .2rem solid;
+}
+
+.player-wins-O-count,
+.player-wins-X-count {
+    color: #2ecc71;
 }
