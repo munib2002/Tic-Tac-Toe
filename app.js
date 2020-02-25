@@ -1,8 +1,9 @@
 new Vue({
     el: '#app',
     data: {
+        firstTurnO: true,
         gamePlaying: false,
-        activePlayerO: false,
+        activePlayerO: true,
         showWinner: false,
         state: {},
         wins: {O: 0, X: 0}
@@ -39,7 +40,8 @@ new Vue({
             this.startGame();
         },
         startGame() {
-            this.activePlayerO = !this.activePlayerO;
+            this.activePlayerO = this.firstTurnO;
+            this.firstTurnO = !this.firstTurnO;
             this.gamePlaying = true;
             this.state = {};
             this.state.X = [];
@@ -62,7 +64,6 @@ new Vue({
                     this.showWinner = true;
                     this.gamePlaying = false;
                     this.wins[activePlayer]++;
-                    this.activePlayerO = !this.activePlayerO;
                 }
             });
         },
@@ -71,7 +72,6 @@ new Vue({
                 this.state.winner = 'draw';
                 this.showWinner = true;
                 this.gamePlaying = false;
-                this.activePlayerO = !this.activePlayerO;
             }
         },
         resetWins() {
