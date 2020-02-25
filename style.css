@@ -95,7 +95,7 @@ body {
     display: flex;
     align-items: center;
     padding: .7rem;
-    /* border: .2rem solid transparent; */
+    border: .2rem solid transparent;
 }
 
 .player--active {
@@ -180,6 +180,7 @@ body {
     width: 20rem;
     background-color: #fff;
     border: .5rem solid #2980b9;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.3);
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
